@@ -28,19 +28,11 @@ Information at [Project Euler 061](https://projecteuler.net/problem=61)
 
 **Getting Started**
 
-Enter a whole number between 3 and 6 (without leading zeros) and select the Submit Button.  You will see the sum of the numbers in ordered sets of n cyclic 4-digit numbers for which each of the P<sub>3</sub> to P<sub>n+2</sub> polygonal types, is represented by a different number in the set.  For example, if you entered 3 then selected the Submit Button, you would expect the sum to be 19291.  If you have made an invalid input, you will get an error message.  Select the Reset Button to clear the information or to start again.
+Select Show Solution to Show the Solution.  Or Hide Solution to Hide the solution.  When the Show Solution Button is selected, it shows the sum of all numbers in ordered sets of 3, 4, 5 and 6 cyclic 4-digit numbers for which each of the polygonal types, is represented by a different number in the set.
 
 **User Stories**
 
-As a user, I expect to get an error message, if I do any of:
-
-- Not enter anything in the input field
-- Entering text other than a number
-- Entering a number less than 3 or greater than 6
-- Including leading zeros such as 03
-- Entering a number, but it is not an integer
-
-As a user, if I select the Reset Button, I can clear the information or start again.
+As a user, I can show or hide the solution by selecting the appropriate button.
 
 As a user, I expect the function `cyclicalFigurateNums(3)` to return a number.
 
@@ -60,7 +52,7 @@ The function `cyclicalFigurateNums(n)` returns a number, where `n` is a number b
 
 ## Features
 
-Allows the user to enter a number in order to get the sum of numbers in ordered sets of n cyclic 4-digit numbers, where n is a number between 3 and 6.  Performs checks on valid user input.  If the input is not valid, an error message is displayed instead.
+Allows the user to show or hide the solution to the problem as described in [Project Euler 061](https://projecteuler.net/problem=61).
 
 ## Technologies
 
