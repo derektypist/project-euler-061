@@ -53,28 +53,20 @@
         </ol>
         <p>Find the sum of all numbers in ordered sets of n cyclic 4-digit numbers for which each polygonal type:
             triangle, square, pentagonal, [hexagonal, heptagonal, and octagonal], is represented by a different number
-            in a set. Begin by entering a number.</p>
+            in a set. Select Show Solution to show the solution.  Or Hide Solution to hide the solution.</p>
     </section>
 
-    <!-- Set Up Form -->
+    <!-- Set Up and Center Buttons -->
     <section class="container-fluid">
-        <form>
-            <!-- Set Up Label and Input -->
-            <article class="mb-3">
-                <label for="mynumber" class="form-label">Number (Required)</label>
-                <input class="form-control" title="Enter whole number between 3 and 6 (without leading zeros)"
-                    placeholder="Enter whole number between 3 and 6 (without leading zeros)" id="mynumber">
-            </article>
-
-            <!-- Set Up and Center Buttons -->
+        
             <article class="d-grid gap-2 d-flex justify-content-center">
-                <button type="button" class="btn btn-info" onclick="getNumberInfo()">Submit</button>
-                <button type="reset" class="btn btn-warning" onclick="clearInfo()">Reset</button>
+                <button type="button" class="btn btn-info" onclick="showSolution()">Show Solution</button>
+                <button type="reset" class="btn btn-warning" onclick="hideSolution()">Hide Solution</button>
             </article>
-        </form>
+        
 
-        <!-- Display Number Information -->
-        <p id="numinfo"></p>
+        <!-- Display Solution Information -->
+        <p id="solution"></p>
 
         <!-- Load Script -->
         <script src="js/script.js"></script>
