@@ -8,6 +8,7 @@ function getNumberInfo() {
     if (isNaN(num) || num.length == 0 || num < 3 || num > 6 || (num.length > 1 && num[0] == "0") || !Number.isInteger(Number(num))) {
         txt += `Invalid Input.  Please enter a whole number between 3 and 6.  Do not include leading zeros.`;
     } else {
+        txt += `${cyclicalFigurateNums(3)}`;
         txt += `Sum of numbers in ordered sets of ${num} cyclic 4-digit numbers is ${cyclicalFigurateNums(num)}.`;
     }
 
