@@ -28,7 +28,7 @@ Information at [Project Euler 061](https://projecteuler.net/problem=61)
 
 **Getting Started**
 
-Enter a whole number between 3 and 6 (without leading zeros) and select the Submit Button.
+Enter a whole number between 3 and 6 (without leading zeros) and select the Submit Button.  You will see the sum of the numbers in ordered sets of n cyclic 4-digit numbers for which each of the P<sub>3</sub> to P<sub>n+2</sub> polygonal types, is represented by a different number in the set.  For example, if you entered 3 then selected the Submit Button, you would expect the sum to be 19291.  If you have made an invalid input, you will get an error message.  Select the Reset Button to clear the information or to start again.
 
 **User Stories**
 
