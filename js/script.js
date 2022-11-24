@@ -131,4 +131,30 @@ function cyclicalFigurateNums(n) {
         return ((3*num+1) ** 0.5 + 1) % 3 === 0;
     }
 
+    const numberTypes = [
+        ['triangle',isTriangle,[]],
+        ['square',isSquare,[]],
+        ['pentagonal',isPentagonal,[]],
+        ['hexagonal',isHexagonal,[]],
+        ['heptagonal',isHeptagonal,[]],
+        ['octagonal',isOctagonal,[]]
+    ];
+
+    const numsExcludingLastNumberType = new Set();
+    fillNumberTypes(n,numberTypes,numsExcludingLastNumberType);
+    const nNumberChains = [];
+    const [, , lastType] = numberTypes[n-1];
+    for (let i=0;i<lastType.length;i++) {
+        const startOfChain = lastType[i];
+        nNumberChains.push(...getChains([startOfChain],n,numberTypes,numsExcludingLastNumberType));
+    }
+
+    const cyclicalChains = nNumberChains.filter(chain => isCyclicalChain(chain, n, numberTypes));
+    let sum = 0;
+    for (let i=0;i<cyclicalChains.length;i++) {
+        for (let j=0;j<cyclicalChains[0].length;j++) {
+            sum += cyclicalChains[i][j];
+        }
+    }
+    return sum;
 }
