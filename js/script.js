@@ -26,38 +26,38 @@ function getNumberInfo() {
     cyclicalFigurateNums(6) returns 28684
 */
 function cyclicalFigurateNums(n) {
-    function getChains(chain, n, numberTypes, numsExcludingLastNumberType) {
+    function getChains(chain, n, numberTypes, numsExcludingLastNeededType) {
         if (chain.length === n) return [chain];
 
-        const nextNumbers = getNextNumbersInChain(chain[chain.length - 1], numsExcludingLastNumberType);
+        const nextNumbers = getNextNumbersInChain(chain[chain.length - 1], numsExcludingLastNeededType);
         const chains = [];
         for (let j = 0; j < nextNumbers; j++) {
             const nextNumber = nextNumbers[j];
             if (chain.indexOf(nextNumber) === -1) {
                 const nextChain = [...chain, nextNumber];
-                chains.push(...getChains(nextChain, n, numberTypes, numsExcludingLastNumberType));
+                chains.push(...getChains(nextChain, n, numberTypes, numsExcludingLastNeededType));
             }
         }
         return chains;
     }
 
-    function getNextNumbersInChain(num, numsExcludingLastNumberType) {
+    function getNextNumbersInChain(num, numsExcludingLastNeededType) {
         const results = [];
         const beginning = num % 100;
-        numsExcludingLastNumberType.forEach(number => {
+        numsExcludingLastNeededType.forEach(number => {
             if (Math.floor(number / 100) === beginning) results.push(number);
         });
         return results;
     }
 
-    function fillNumberTypes(n, numberTypes, numsExcludingLastNumberType) {
+    function fillNumberTypes(n, numberTypes, numsExcludingLastNeededType) {
         const [, lastTypeCheck, lastTypeArr] = numberTypes[n - 1];
         for (let i = 1000; i <= 9999; i++) {
             for (let j = 0; j < n - 1; j++) {
                 const [, typeCheck, typeArr] = numberTypes[j];
                 if (typeCheck(i)) {
                     typeArr.push(i);
-                    numsExcludingLastNumberType.add(i);
+                    numsExcludingLastNeededType.add(i);
                 }
             }
             if (lastTypeCheck(i)) lastTypeArr.push(i);
