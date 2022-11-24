@@ -5,9 +5,9 @@ function showSolution() {
   // Apply For Loop
   for (let n=3;n<=6;n++) {
     if (n!=6) {
-      txt += `Sum With ${n} is ${cyclicalFigurateNums(n)}, `;
+      txt += `Sum with ${n} is ${cyclicalFigurateNums(n)}, `;
     } else {
-      txt += `Sum iwht ${n} is ${cyclicalFigurateNums(n)}.`;
+      txt += `Sum with ${n} is ${cyclicalFigurateNums(n)}.`;
     }
   }
  
