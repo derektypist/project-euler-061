@@ -140,13 +140,13 @@ function cyclicalFigurateNums(n) {
         ['octagonal', isOctagonal, []]
     ];
 
-    const numsExcludingLastNumberType = new Set();
-    fillNumberTypes(n, numberTypes, numsExcludingLastNumberType);
+    const numsExcludingLastNeededType = new Set();
+    fillNumberTypes(n, numberTypes, numsExcludingLastNeededType);
     const nNumberChains = [];
     const [, , lastType] = numberTypes[n - 1];
     for (let i = 0; i < lastType.length; i++) {
         const startOfChain = lastType[i];
-        nNumberChains.push(...getChains([startOfChain], n, numberTypes, numsExcludingLastNumberType));
+        nNumberChains.push(...getChains([startOfChain], n, numberTypes, numsExcludingLastNeededType));
     }
 
     const cyclicalChains = nNumberChains.filter(chain => isCyclicalChain(chain, n, numberTypes));
