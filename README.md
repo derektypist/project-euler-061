@@ -58,3 +58,11 @@ User Stories on function `cyclicalFigurateNums(n)` taken from [FreeCodeCamp - Co
 
 The function `cyclicalFigurateNums(n)` returns a number, where `n` is a number between 3 and 6.
 
+## Features
+
+Allows the user to enter a number in order to get the sum of numbers in ordered sets of n cyclic 4-digit numbers, where n is a number between 3 and 6.  Performs checks on valid user input.  If the input is not valid, an error message is displayed instead.
+
+## Technologies
+
+Uses HTML5, CSS3, JavaScript, Bootstrap 5.2.3 and Google Fonts.
+
