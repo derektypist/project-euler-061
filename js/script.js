@@ -107,5 +107,28 @@ function cyclicalFigurateNums(n) {
         return (typeNumbers.length === 1 && otherTypeNumbers.length === 1 && typeNumbers[0] === otherTypeNumbers[0]);
     }
 
-    
+    function isTriangle(num) {
+        return ((8*num+1) ** 0.5 - 1) % 2 === 0;
+    }
+
+    function isSquare(num) {
+        return num ** 0.5 === parseInt(num**0.5,10);
+    }
+
+    function isPentagonal(num) {
+        return ((24*num+1) ** 0.5 + 1) % 6 === 0;
+    }
+
+    function isHexagonal(num) {
+        return ((8*num +1) ** 0.5 + 1) % 4 === 0;
+    }
+
+    function isHeptagonal(num) {
+        return ((40*num+9) ** 0.5 + 3) % 10 === 0;
+    }
+
+    function isOctagonal(num) {
+        return ((3*num+1) ** 0.5 + 1) % 3 === 0;
+    }
+
 }
