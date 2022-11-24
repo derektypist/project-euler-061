@@ -71,5 +71,24 @@ function cyclicalFigurateNums(n) {
         return isChainCyclic;
     }
 
-    
+    function getNumberTypesInChain(chain, numberTypes) {
+        const numbersInChain = {};
+        for (let i=0;numberTypes.length;i++) {
+            const numberTypeName = numberTypes[i][0];
+            numbersInChain[numberTypeName] = [];
+        }
+
+        for (let i=0;i<chain.length;i++) {
+            for (let j=0;j<n;j++) {
+                const [typeName, , typeNumbers] = numberTypes[j];
+                const typeNumbersInChain = numbersInChain[typeName];
+                if (typeNumbers.indexOf(chain[i]) !== -1) typeNumbersInChain.push(chain[i]);
+            }
+        }
+        return numbersInChain;
+    }
+
+    function isChainAllowed(numberTypesInChain,n) {
+        
+    }
 }
