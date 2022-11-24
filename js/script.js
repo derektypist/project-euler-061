@@ -4,11 +4,7 @@ function showSolution() {
   let txt = "";
   // Apply For Loop
   for (let n=3;n<=6;n++) {
-    if (n!=6) {
-      txt += `Sum with ${n} is ${cyclicalFigurateNums(n)}, `;
-    } else {
-      txt += `Sum with ${n} is ${cyclicalFigurateNums(n)}.`;
-    }
+    txt += `Sum with ${n} cyclic 4-digit numbers is ${cyclicalFigurateNums(n)}.<p>`;
   }
  
 
