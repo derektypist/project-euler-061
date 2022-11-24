@@ -1,18 +1,19 @@
-// Function to Get Number Information (including Invalid Input)
-function getNumberInfo() {
+// Function to Show Solutiohn
+function showSolution() {
   // Set Up Variable
   let txt = "";
-  // Get the Value of the Input Field
-  let num = document.getElementById("mynumber").value;
-  // Check if the Input is Valid
-  if (isNaN(num) || num.length == 0 || num < 3 || num > 6 || (num.length > 1 && num[0] == "0") || !Number.isInteger(Number(num))) {
-    txt += `Invalid Input.  Please enter a whole number between 3 and 6.  Do not include leading zeros.`;
-  } else {
-    txt += `Sum of numbers in ordered sets of ${num} cyclic 4-digit numbers is ${cyclicalFigurateNums(num)}.`;
+  // Apply For Loop
+  for (let n=3;n<=6;n++) {
+    if (n!=6) {
+      txt += `Sum With ${n} is ${cyclicalFigurateNums(n)}, `;
+    } else {
+      txt += `Sum iwht ${n} is ${cyclicalFigurateNums(n)}.`;
+    }
   }
+ 
 
   // Display Information in the Browser
-  document.getElementById("numinfo").innerHTML = txt;
+  document.getElementById("solution").innerHTML = txt;
 }
 
 /*
@@ -165,8 +166,8 @@ function cyclicalFigurateNums(n) {
   return sum;
 }
 
-// Function to Clear Information
-function clearInfo() {
+// Function to Hide Solution
+function hideSolution() {
   let txt = "";
-  document.getElementById("numinfo").innerHTML = txt;
+  document.getElementById("solution").innerHTML = txt;
 }
