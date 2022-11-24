@@ -89,6 +89,23 @@ function cyclicalFigurateNums(n) {
     }
 
     function isChainAllowed(numberTypesInChain,n) {
-        
+        for (let i=0;i<n;i++) {
+            const typeName = numberTypes[i][0];
+            const isNumberWithTypeInChain = numberTypesInChain[typeName].length > 0;
+            if (!isNumberWithTypeInChain) return false;
+            for (let j=i+1;j<n;j++) {
+                const otherTypeName = numberTypes[j][0];
+                if (isNumberRepeatedAsOnlyNumberInTwoTypes(numberTypesInChain[typeName],numberTypesInChain[otherTypeName])) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
+
+    function isNumberRepeatedAsOnlyNumberInTwoTypes(typeNumbers,otherTypeNumbers) {
+        return (typeNumbers.length === 1 && otherTypeNumbers.length === 1 && typeNumbers[0] === otherTypeNumbers[0]);
+    }
+
+    
 }
