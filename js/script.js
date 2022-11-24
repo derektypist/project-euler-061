@@ -40,4 +40,36 @@ function cyclicalFigurateNums(n) {
         }
         return chains;
     }
+
+    function getNextNumbersInChain(num,numsExcludingLastNumberType) {
+        const results = [];
+        const beginning = num % 100;
+        numsExcludingLastNumberType.forEach(number => {
+            if (Math.floor(number/100) === beginning) results.push(number);
+        });
+        return results;
+    }
+
+    function fillNumberTypes(n,numberTypes,numsExcludingLastNumberType) {
+        const [, lastTypeCheck, lastTypeArr] = numberTypes[n-1];
+        for (let i=1000;i<=9999;i++) {
+            for (let j=0;j<n-1;j++) {
+                const [, typeCheck, typeArr] = numberTypes[j];
+                if (typeCheck(i)) {
+                    typeArr.push(i);
+                    numsExcludingLastNumberType.add(i);
+                }
+            }
+            if (lastTypeCheck(i)) lastTypeArr.push(i);
+        }
+    }
+
+    function isCyclicalChain(chain,n,numberTypes) {
+        const numberTypesInChain = getNumberTypesInChain(chain,numberTypes);
+        if (!isChainAllowed(numberTypesInChain,n)) return false;
+        const isChainCyclic = Math.floor(chain[0]/100) === chain[chain.length-1] % 100;
+        return isChainCyclic;
+    }
+
+    
 }
