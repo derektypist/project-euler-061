@@ -3,10 +3,9 @@ function showSolution() {
   // Set Up Variable
   let txt = "";
   // Apply For Loop
-  for (let n=3;n<=6;n++) {
+  for (let n = 3; n <= 6; n++) {
     txt += `Sum with ${n} cyclic 4-digit numbers is ${cyclicalFigurateNums(n)}.<br>`;
   }
- 
 
   // Display Information in the Browser
   document.getElementById("solution").innerHTML = txt;
